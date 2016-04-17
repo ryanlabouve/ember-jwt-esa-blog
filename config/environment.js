@@ -19,6 +19,25 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['ember-cli-mirage'] = {
+    enabled: false
+  };
+
+  if (environment === 'development') {
+    ENV.host = 'http://localhost:3000';
+  }
+
+  if (environment === 'test') {
+    // remove host address for tests
+    // so the paths display omits the url
+    ENV.host = '';
+
+    // Turn on mirage only for testing
+    ENV['ember-cli-mirage'] = {
+      enabled: true
+    };
+  }
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
