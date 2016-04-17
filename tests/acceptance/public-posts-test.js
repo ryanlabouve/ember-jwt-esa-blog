@@ -26,5 +26,9 @@ test('public posts on /', function(assert) {
       5,
       'We can see all the public posts on /'
     );
+
+    // If we want to see what this actually looks
+    // like, we can use `pauseTest();`
+    // pauseTest();
   });
 });
