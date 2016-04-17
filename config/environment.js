@@ -23,11 +23,21 @@ module.exports = function(environment) {
     enabled: false
   };
 
+  ENV['simple-auth'] = {
+    store: 'simple-auth-session-store:local-storage',
+    authorizer: 'authorizer:knockjwt',
+    crossOriginWhiteList: ['http://localhost:3000'],
+    routeAfterAuthentication: '/'
+  }
+
   if (environment === 'development') {
     ENV.host = 'http://localhost:3000';
   }
 
   if (environment === 'test') {
+    ENV['simple-auth'] = {
+      store: 'simple-auth-session-store:ephemeral-storage'
+    }
     // remove host address for tests
     // so the paths display omits the url
     ENV.host = '';
