@@ -35,9 +35,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
-    ENV['simple-auth'] = {
-      store: 'simple-auth-session-store:ephemeral-storage'
-    }
     // remove host address for tests
     // so the paths display omits the url
     ENV.host = '';
