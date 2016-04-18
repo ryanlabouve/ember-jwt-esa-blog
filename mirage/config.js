@@ -1,6 +1,7 @@
+import Mirage from 'ember-cli-mirage';
 export default function() {
   this.get('/public-posts');
-  this.post('/knock/auth', (db, request) =>  {
+  this.post('/knock/auth_token', (db, request) =>  {
     const req = JSON.parse(request.requestBody);
     const pw = Ember.get(req, 'auth.password');
 

@@ -59,8 +59,24 @@ test('user can logout', function(assert) {
       'After clicking logout, the user is no longer logged in'
     );
 
+    const loginFormPresent = find('#loginForm').length > 0 ? true : false;
+    assert.equal(
+      loginFormPresent,
+      true,
+      'after we click logout, we see the login form'
+    );
   });
 });
+
+// test('full path', function(assert) {
+//   visit('/');
+//
+//   fillIn('.username-field', 'lester@test.com');
+//   fillIn('.password-field', 'test1234');
+//   click('.login-btn');
+//
+//
+// });
 
 test('user can login', function(assert) {
   invalidateSession(this.application);
@@ -115,7 +131,7 @@ test('If a user puts in the wrong login credentials, they see a login error', fu
     const loginFormPresent = find('#loginForm').length > 0 ? true : false;
     assert.equal(
       loginFormPresent,
-      false,
+      true,
       'and we can still see the login form'
     );
   });
