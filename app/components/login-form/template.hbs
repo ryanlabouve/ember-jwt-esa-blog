@@ -1,19 +1,21 @@
 {{#unless session.isAuthenticated}}
   <div id="loginForm">
     {{#if loginError}}
-      <div class="login-err alert alert-error">Bad deets dude.</div>
+      <div class="login-err alert alert-warning">Bad deets dude.</div>
     {{/if}}
 
     {{input
       value=identification
+      placeholder="username"
       class="username-field"}}
     {{input
       type="password"
+      placeholder="password"
       value=password
       class="password-field"}}
     <a
       href="/login"
-      class="login-btn"
+      class="login-btn btn btn-primary"
       {{action "login"}}
       >
       Login
