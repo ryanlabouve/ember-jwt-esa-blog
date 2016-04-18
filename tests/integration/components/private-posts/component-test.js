@@ -11,5 +11,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{private-posts}}`);
 
-  assert.ok(this.$().text().trim());
+  assert.ok(this.$('.private-posts-component').length, 1);
 });

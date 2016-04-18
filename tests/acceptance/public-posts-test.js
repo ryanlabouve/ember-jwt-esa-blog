@@ -22,7 +22,7 @@ test('public posts on /', function(assert) {
     // and based on our `server.createList`,
     // we exepct there should be 5
     assert.equal(
-      find('.public-post').length,
+      find('.public-posts-component .blog-post').length,
       5,
       'We can see all the public posts on /'
     );

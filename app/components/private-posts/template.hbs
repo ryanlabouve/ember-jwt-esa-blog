@@ -1,5 +1,15 @@
+<div class="list-group-item">
+  <div class="lead">Private Posts</div>
+</div>
 {{#each posts as |post|}}
-  <div class="private-post">
-    {{blog-post title=post.title body=post.body}}
+  {{blog-post title=post.title body=post.body}}
+{{else}}
+  <div class="list-group-item">
+  {{#if session.isAuthenticated}}
+    No Posts Found
+  {{else}}
+
+    <div class="alert alert-danger">Please Login to See Private Posts</div>
+  {{/if}}
   </div>
 {{/each}}

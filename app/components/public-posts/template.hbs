@@ -1,7 +1,10 @@
+<div class="list-group-item">
+  <div class="lead">Public Posts</div>
+</div>
 {{#each posts as |post|}}
-  <div class="public-post">
-    {{blog-post title=post.title body=post.body}}
-  </div>
+  {{blog-post title=post.title body=post.body}}
 {{else}}
-  No Public Posts Found!
+  <div class="list-group-item">
+    No Public Posts Found!
+  </div>
 {{/each}}
