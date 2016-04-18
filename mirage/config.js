@@ -13,7 +13,7 @@ export default function() {
   });
   this.get('/private-posts', ({ privatePost }, request) => {
     const token = Ember.get(request, 'requestHeaders.Authorization');
-    if (token === 'hotdog') {
+    if (token === 'Bearer hotdog') {
       return privatePost.all();
     } else {
       return new Mirage.Response(401, {}, {});
